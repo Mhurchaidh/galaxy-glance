@@ -20,6 +20,8 @@ function addPictures(picObject){
     dateItem.addEventListener('click', () => {
         dailyImage.innerHTML = '';
         renderPicture(picObject)});
+    dateItem.addEventListener('mouseover', () => dateItem.style.color = 'cyan');
+    dateItem.addEventListener('mouseout', () => dateItem.style.color = 'white');
     pictureDatesList.append(dateItem);
 }
 
