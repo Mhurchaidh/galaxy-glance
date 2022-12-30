@@ -16,7 +16,7 @@ body {
     max-width: 40%;
     max-height: 80%;
     display: block;
-    position: absolute;
+    position: fixed;
     top: 35%;
     left: 50%;
     height: auto;
