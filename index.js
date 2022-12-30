@@ -4,6 +4,9 @@ const dailyURL = "https://go-apod.herokuapp.com/apod";
 const dailyImage = document.querySelector('#daily-image');
 const pictureDatesList = document.querySelector('#picture-dates-list');
 const pictureInfo = document.querySelector('#picture-info');
+const commentForm = document.querySelector('#comment-form');
+const commentsList = document.querySelector('#comments-list');
+const commentLi = document.querySelector('#commentLi');
 
 function getPicture(url){
     return fetch(url)
@@ -88,4 +91,13 @@ getPicture(URL).then(pictureArray => {
     renderPicture(pictureArray[pictureArray.length -1]);
 })
 
+commentForm.addEventListener('submit', addNewComment)
 
+function addNewComment(e){
+    e.preventDefault();
+    const inputText = commentForm.querySelector('#comment').value;
+    const newComment = document.createElement('li');
+    newComment.textContent = inputText;
+    commentsList.append(newComment);
+    commentForm.reset();
+}
