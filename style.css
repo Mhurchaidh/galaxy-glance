@@ -26,8 +26,8 @@ body {
     position: absolute;
     display: flex;
     list-style-type: none;
-    top: 10%;
-    left: 45%;
+    top: 15%;
+    left: 51%;
     margin: 0;
     padding: 10;
     cursor: pointer;
@@ -74,7 +74,7 @@ body {
 
   #comment-form-div h3 {
     color: orangered;
-    font-size: 30px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
   }
 
@@ -90,7 +90,7 @@ body {
 
   #comment-form label {
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
   }
 
