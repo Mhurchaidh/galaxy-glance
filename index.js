@@ -16,7 +16,7 @@ function iteratePictures(pictureArray){
 
 function addPictures(picObject){
     const dateItem = document.createElement('li');
-    dateItem.textContent = `* ${picObject.date}`;
+    dateItem.textContent = ` ${picObject.date}`;
     dateItem.addEventListener('click', () => {
         dailyImage.innerHTML = '';
         pictureInfo.innerHTML = '';
@@ -31,11 +31,14 @@ function renderPicture(spaceObject){
     const title = document.createElement('h2');
     const explanation = document.createElement('p');
     const copyright = document.createElement('em');
+
     copyright.textContent = `Copyright: ${spaceObject.copyright}`;
     explanation.textContent = spaceObject.explanation;
-    title.textContent = spaceObject.title;
+    title.textContent = ` - ${spaceObject.title} -`;
+
     image.setAttribute('id', 'space-image');
     image.setAttribute('src', spaceObject.hdurl);
+
     dailyImage.append(image);
     pictureInfo.append(title, explanation, copyright);
 }
