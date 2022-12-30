@@ -17,8 +17,8 @@ body {
     max-height: 80%;
     display: block;
     position: absolute;
-    top: 30%;
-    left: 45%;
+    top: 35%;
+    left: 50%;
     height: auto;
   }
 
@@ -46,7 +46,8 @@ body {
     position: absolute;
     max-width: 35%;
     max-height: auto;
-    top: 30%;
+    text-align: center;
+    top: 35%;
     left: 4%;
     background-color: rgba(0, 0, 0, 0);
   }
@@ -95,8 +96,9 @@ body {
 
   #comment-form-div {
     width: 450px;
-    margin: 0 auto 50px auto;
-    position: relative;
+    position: absolute;
+    top: 85%;
+    left: 4%;
   }
 
   form button[type="submit"] {
