@@ -24,13 +24,14 @@ body {
 
   #picture-dates-list {
     position: absolute;
-    display: inline;
+    display: flex;
     list-style-type: none;
     top: 10%;
     left: 45%;
     margin: 0;
     padding: 10;
     cursor: pointer;
+    gap: 1rem;
   }
 
   #picture-dates-list li {
