@@ -13,6 +13,7 @@ body {
 
   #space-image {
     max-width: 60%;
+    max-height: 80%;
     display: block;
     position: absolute;
     top: 20%;
@@ -30,8 +31,6 @@ body {
     list-style: none;
     gap: 1rem;
     background-color: rgba(53, 51, 51, 0.507);
-    border-style: solid;
-    border-color: rgba(218, 112, 214, 0.719);
     cursor: pointer;
   }
 
@@ -40,7 +39,30 @@ body {
     font-size: 30px;
   }
 
-  /* #picture-dates-list li img {
-    max-width: 200px;
-    max-height: 100px;
-  } */
+  #picture-info {
+    display: block;
+    position: absolute;
+    max-width: 35%;
+    top: 30%;
+    left: 5%;
+    background-color: rgba(53, 51, 51, 0.507);
+  }
+
+  #picture-info h2 {
+    color: orange;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  #picture-info p {
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-wrap: wrap;
+  }
+
+  #picture-info em {
+    color: orchid;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+  }
