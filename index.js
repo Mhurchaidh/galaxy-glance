@@ -43,8 +43,49 @@ function renderPicture(spaceObject){
     pictureInfo.append(title, explanation, copyright);
 }
 
+//#region - TESTING -
+// function addDailyPicture(responseObject){
+//     const todaysDate = responseObject.date;
+//     getPicture(URL).then(pictureArray => {
+//         const printDate = pictureArray.find(element => element.date === todaysDate)
+//         if(printDate){
+//             iteratePictures(pictureArray);
+//             renderPicture(pictureArray[pictureArray.length -1]);
+//             return;
+//         }
+//         else{
+//             postDailyPicture(responseObject)
+//         }
+//     });
+    
+// }
+
+// function postDailyPicture(pictureObject){
+//     const config = {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//         },
+//         body: JSON.stringify(pictureObject)
+//     }
+//     return fetch(URL, config)
+//         .then(response => response.json())
+    
+//     console.log(pictureObject)
+// }
+
+// function getDailyPicture(url){
+//     return fetch(url)
+//         .then(resp => resp.json());
+// }
+
+// getDailyPicture(dailyURL).then(resp => addDailyPicture(resp))
+//#endregion
+
 getPicture(URL).then(pictureArray => {
     iteratePictures(pictureArray);
     renderPicture(pictureArray[pictureArray.length -1]);
 })
+
 
