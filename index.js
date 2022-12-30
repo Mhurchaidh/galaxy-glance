@@ -21,7 +21,7 @@ function addPictures(picObject){
         dailyImage.innerHTML = '';
         pictureInfo.innerHTML = '';
         renderPicture(picObject)});
-    dateItem.addEventListener('mouseover', () => dateItem.style.color = 'cyan');
+    dateItem.addEventListener('mouseover', () => dateItem.style.color = 'rgb(93, 0, 255)');
     dateItem.addEventListener('mouseout', () => dateItem.style.color = 'white');
     pictureDatesList.append(dateItem);
 }
