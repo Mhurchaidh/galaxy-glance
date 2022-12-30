@@ -3,6 +3,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    cursor: url('rocket.png'), auto;
   }
 
   img#logo-image {
@@ -23,16 +24,21 @@ body {
 
   #picture-dates-list {
     position: absolute;
-    top: 30%;
-    left: 89%;
+    display: inline;
+    list-style-type: none;
+    top: 10%;
+    left: 45%;
     margin: 0;
-    padding: 0;
+    padding: 10;
     cursor: pointer;
   }
 
   #picture-dates-list li {
     color: white;
+    display: inline;
     font-size: 30px;
+    padding: 15x;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
 
   #picture-info {
@@ -40,9 +46,9 @@ body {
     position: absolute;
     max-width: 35%;
     max-height: auto;
-    top: 40%;
+    top: 30%;
     left: 4%;
-    background-color: rgba(53, 51, 51, 0.507);
+    background-color: rgba(0, 0, 0, 0.507);
   }
 
   #picture-info h2 {

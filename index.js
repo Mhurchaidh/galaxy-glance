@@ -16,7 +16,7 @@ function iteratePictures(pictureArray){
 
 function addPictures(picObject){
     const dateItem = document.createElement('li');
-    dateItem.textContent = ` ${picObject.date}`;
+    dateItem.textContent = `${picObject.date}`;
     dateItem.addEventListener('click', () => {
         dailyImage.innerHTML = '';
         pictureInfo.innerHTML = '';
@@ -47,3 +47,4 @@ getPicture(URL).then(pictureArray => {
     iteratePictures(pictureArray);
     renderPicture(pictureArray[pictureArray.length -1]);
 })
+
