@@ -14,11 +14,11 @@ body {
 
   #space-image {
     max-width: 40%;
-    max-height: 80%;
+    max-height: 69%;
     display: block;
     position: fixed;
-    top: 35%;
-    left: 50%;
+    top: 30%;
+    left: 51%;
     height: auto;
   }
 
