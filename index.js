@@ -1,12 +1,18 @@
 const URL = "http://localhost:3000/space-pictures";
 const dailyURL = "https://go-apod.herokuapp.com/apod";
 
+let currPicture;
+
 const dailyImage = document.querySelector('#daily-image');
 const pictureDatesList = document.querySelector('#picture-dates-list');
 const pictureInfo = document.querySelector('#picture-info');
 const commentForm = document.querySelector('#comment-form');
 const commentsList = document.querySelector('#comments-list');
 const commentLi = document.querySelector('#commentLi');
+const image = document.querySelector('#space-image');
+const title = document.querySelector('#title');
+const explanation = document.querySelector('#explanation');
+const copyright = document.querySelector('#copyright');
 
 function getPicture(url){
     return fetch(url)
@@ -21,29 +27,22 @@ function addPictures(picObject){
     const dateItem = document.createElement('li');
     dateItem.textContent = `${picObject.date}`;
     dateItem.addEventListener('click', () => {
-        dailyImage.innerHTML = '';
-        pictureInfo.innerHTML = '';
-        renderPicture(picObject)});
+        commentsList.innerHTML = '';
+        renderPicture(picObject)
+    });
     dateItem.addEventListener('mouseover', () => dateItem.style.color = 'rgb(93, 0, 255)');
     dateItem.addEventListener('mouseout', () => dateItem.style.color = 'white');
     pictureDatesList.append(dateItem);
 }
 
 function renderPicture(spaceObject){
-    const image = document.createElement('img');
-    const title = document.createElement('h2');
-    const explanation = document.createElement('p');
-    const copyright = document.createElement('em');
-
+    currPicture = spaceObject;
+    console.log(currPicture.comments)
     copyright.textContent = `Copyright: ${spaceObject.copyright}`;
     explanation.textContent = spaceObject.explanation;
-    title.textContent = ` - ${spaceObject.title} -`;
-
-    image.setAttribute('id', 'space-image');
-    image.setAttribute('src', spaceObject.hdurl);
-
-    dailyImage.append(image);
-    pictureInfo.append(title, explanation, copyright);
+    title.textContent = `- ${spaceObject.title} -`;
+    image.src = spaceObject.hdurl;
+    currPicture.comments.forEach(index => renderComments(index));
 }
 
 //#region - TESTING -
@@ -95,9 +94,30 @@ commentForm.addEventListener('submit', addNewComment)
 
 function addNewComment(e){
     e.preventDefault();
-    const inputText = commentForm.querySelector('#comment').value;
-    const newComment = document.createElement('li');
-    newComment.textContent = inputText;
-    commentsList.append(newComment);
+    currPicture.comments.push(commentForm.comment.value);
+    patchComments(currPicture).then(renderPicture)
     commentForm.reset();
+}
+
+function renderComments(index){
+    const newComment = document.createElement('li');
+    newComment.textContent = index;
+    commentsList.append(newComment);
+}
+
+function patchComments(picObject){
+    const config = {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(picObject)
+    }
+    
+    return fetch(URL + `/${currPicture.id}`, config)
+        .then(resp => {
+            if(resp.ok){
+                return resp.json();
+            }
+        });
 }
