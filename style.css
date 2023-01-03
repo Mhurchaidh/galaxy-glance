@@ -39,6 +39,7 @@ body {
     font-size: 1.3vw;
     padding: 15x;
     font-family: 'Orbitron', sans-serif;
+    max-width: min-content;
   }
 
   #picture-info {
