@@ -99,7 +99,8 @@ body {
 
   #comment-form-div {
     width: 450px;
-    position: absolute;
+    /* position: absolute; */
+    display: flexbox;
     top: 85%;
     left: 4%;
   }
