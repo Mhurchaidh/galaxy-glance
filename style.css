@@ -208,16 +208,16 @@ span:nth-child(4){
 } */
 
 span:nth-child(1){
-  top: 10px;
-  right: 400px;
+  top: 5vh;
+  right: 30vw;
   left:initial;
-  animation-delay:0.8s;
+  animation-delay:1s;
   animation-duration: 2.5s;
 }
 
 span:nth-child(2){
-  top: 10px;
-  right: 600px;
+  top: 10vh;
+  right: 50vw;
   left:initial;
   animation-delay:1s ;
   animation-duration: 3s;
@@ -232,24 +232,24 @@ span:nth-child(2){
 /* } */
 
 span:nth-child(3){
-  top: 10px;
-  right: 700px;
+  top: 10vh;
+  right: 70vw;
   left:initial;
   animation-delay:1.4s ;
   animation-duration: 1.25s;
 }
 
 span:nth-child(4){
-  top: 10px;
-  right: 800px;
+  top: 10vh;
+  right: 40vw;
   left:initial;
   animation-delay:0.75s ;
   animation-duration: 2.25s;
 }
 
 span:nth-child(5){
-  top: 10px;
-  right: 1000px;
+  top: 10vh;
+  right: 20vw;
   left:initial;
   animation-delay:2.75s ;
   animation-duration: 2.25s;
