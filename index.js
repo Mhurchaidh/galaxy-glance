@@ -125,10 +125,10 @@ function patchComments(picObject){
 }
 
 
-function checkListLocation(){
-    const ufo = document.querySelector('#ufo');
-    const datesListArray = document.getElementsByClassName('dateLi');
-    //console.log(datesListArray[datesListArray.length -1].offsetLeft);
-    console.log(ufo.offsetLeft);
-    ufo.offsetLeft = (datesListArray[datesListArray.length -1].offsetLeft);
-}
+// function checkListLocation(){
+//     const ufo = document.querySelector('#ufo');
+//     const datesListArray = document.getElementsByClassName('dateLi');
+//     //console.log(datesListArray[datesListArray.length -1].offsetLeft);
+//     console.log(ufo.offsetLeft);
+//     ufo.offsetLeft = (datesListArray[datesListArray.length -1].offsetLeft);
+// }
