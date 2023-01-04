@@ -40,7 +40,9 @@
       "service_version": "v1",
       "title": "Mars and the Star Clusters",
       "url": "https://apod.nasa.gov/apod/image/2212/mars_clusters1024.jpg",
-      "comments": []
+      "comments": [
+        "That's a big star!!!"
+      ]
     },
     {
       "id": 3,
@@ -51,7 +53,9 @@
       "service_version": "v1",
       "title": "Moon over Makemake",
       "url": "https://apod.nasa.gov/apod/image/2212/Makemakemoon100mile.jpg",
-      "comments": []
+      "comments": [
+        "Simply amazing!"
+      ]
     },
     {
       "id": 4,
@@ -77,7 +81,10 @@
       "service_version": "v1",
       "title": "After Sunset Planet Parade",
       "url": "https://apod.nasa.gov/apod/image/2301/AllPlanets_Tezel_1080_annotated.jpg",
-      "comments": []
+      "comments": [
+        "The sky is so beautiful!",
+        "Awesome sunset"
+      ]
     }
   ]
 }

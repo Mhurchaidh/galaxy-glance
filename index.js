@@ -25,6 +25,7 @@ function iteratePictures(pictureArray){
 
 function addPictures(picObject){
     const dateItem = document.createElement('li');
+    dateItem.setAttribute('class', 'dateLi');
     dateItem.textContent = `${picObject.date}`;
     dateItem.addEventListener('click', () => {
         commentsList.innerHTML = '';
@@ -37,12 +38,12 @@ function addPictures(picObject){
 
 function renderPicture(spaceObject){
     currPicture = spaceObject;
-    console.log(currPicture.comments)
     copyright.textContent = `Copyright: ${spaceObject.copyright}`;
     explanation.textContent = spaceObject.explanation;
     title.textContent = `- ${spaceObject.title} -`;
     image.src = spaceObject.hdurl;
     currPicture.comments.forEach(index => renderComments(index));
+    checkListLocation();
 }
 
 //#region - TESTING -
@@ -121,4 +122,13 @@ function patchComments(picObject){
                 return resp.json();
             }
         });
+}
+
+
+function checkListLocation(){
+    const ufo = document.querySelector('#ufo');
+    const datesListArray = document.getElementsByClassName('dateLi');
+    //console.log(datesListArray[datesListArray.length -1].offsetLeft);
+    console.log(ufo.offsetLeft);
+    ufo.offsetLeft = (datesListArray[datesListArray.length -1].offsetLeft);
 }
