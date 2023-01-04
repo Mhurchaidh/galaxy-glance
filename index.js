@@ -95,6 +95,7 @@ commentForm.addEventListener('submit', addNewComment)
 function addNewComment(e){
     e.preventDefault();
     currPicture.comments.push(commentForm.comment.value);
+    commentsList.innerHTML = "";
     patchComments(currPicture).then(renderPicture)
     commentForm.reset();
 }
