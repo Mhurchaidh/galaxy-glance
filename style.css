@@ -40,6 +40,12 @@ body {
   border-color: orchid;
 }
 
+#currentDate{
+  border: 2px solid orchid;
+  box-shadow: 0 0 20px orchid;
+  border-color: orchid;
+}
+
 #picture-dates-list li{
   color: white;
   font-family: 'Orbitron', sans-serif;
@@ -168,7 +174,7 @@ span::before{
 @keyframes animate {
   0%
   {
-      transform: rotate(315deg) translateX(0);
+      transform: rotate(315deg) translateX(0vw);
       opacity: 1;
   }
   70%
@@ -178,7 +184,7 @@ span::before{
   }
   100%
   {
-      transform: rotate(315deg) translateX(-1000px);
+      transform: rotate(315deg) translateX(-90vw);
       opacity: 0;
 
   }
@@ -232,20 +238,20 @@ span:nth-child(2){
   animation-duration: 3s;
 }
 
-/* span:nth-child(7 ){
+/* span:nth-child(7){
   top: 300px;
   right: 10px;
   left:initial;
   animation-delay:1s ;
-  animation-duration: 1.75s; */
-/* } */
+  animation-duration: 1.75s;
+} */
 
 span:nth-child(3){
   top: 10vh;
   right: 70vw;
   left:initial;
   animation-delay:1.4s ;
-  animation-duration: 1.25s;
+  animation-duration: 3.25s;
 }
 
 span:nth-child(4){
@@ -253,7 +259,7 @@ span:nth-child(4){
   right: 40vw;
   left:initial;
   animation-delay:0.75s ;
-  animation-duration: 2.25s;
+  animation-duration: 2.15s;
 }
 
 span:nth-child(5){

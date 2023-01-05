@@ -2,6 +2,7 @@ const URL = "http://localhost:3000/space-pictures";
 const dailyURL = "https://go-apod.herokuapp.com/apod";
 
 let currPicture;
+let previousDate;
 
 const dailyImage = document.querySelector('#daily-image');
 const pictureDatesList = document.querySelector('#picture-dates-list');
@@ -26,14 +27,22 @@ function iteratePictures(pictureArray){
 function addPictures(picObject){
     const dateItem = document.createElement('li');
     dateItem.setAttribute('class', 'dateLi');
+    dateItem.setAttribute('id', '');
     dateItem.textContent = `${picObject.date}`;
     dateItem.addEventListener('click', () => {
         commentsList.innerHTML = '';
+        const datesList = document.querySelectorAll('.dateLi');
+        datesList.forEach(element => element.id = '');
+        highlightDate(dateItem);
         renderPicture(picObject)
     });
     dateItem.addEventListener('mouseover', () => dateItem.style.color = 'rgb(93, 0, 255)');
     dateItem.addEventListener('mouseout', () => dateItem.style.color = 'white');
     pictureDatesList.append(dateItem);
+}
+
+function highlightDate(currDate){
+    currDate.id = 'currentDate';
 }
 
 function renderPicture(spaceObject){
@@ -43,48 +52,8 @@ function renderPicture(spaceObject){
     title.textContent = `- ${spaceObject.title} -`;
     image.src = spaceObject.hdurl;
     currPicture.comments.forEach(index => renderComments(index));
-    checkListLocation();
+    //checkListLocation();
 }
-
-//#region - TESTING -
-// function addDailyPicture(responseObject){
-//     const todaysDate = responseObject.date;
-//     getPicture(URL).then(pictureArray => {
-//         const printDate = pictureArray.find(element => element.date === todaysDate)
-//         if(printDate){
-//             iteratePictures(pictureArray);
-//             renderPicture(pictureArray[pictureArray.length -1]);
-//             return;
-//         }
-//         else{
-//             postDailyPicture(responseObject)
-//         }
-//     });
-    
-// }
-
-// function postDailyPicture(pictureObject){
-//     const config = {
-//         method: "POST",
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         },
-//         body: JSON.stringify(pictureObject)
-//     }
-//     return fetch(URL, config)
-//         .then(response => response.json())
-    
-//     console.log(pictureObject)
-// }
-
-// function getDailyPicture(url){
-//     return fetch(url)
-//         .then(resp => resp.json());
-// }
-
-// getDailyPicture(dailyURL).then(resp => addDailyPicture(resp))
-//#endregion
 
 getPicture(URL).then(pictureArray => {
     iteratePictures(pictureArray);
@@ -123,12 +92,3 @@ function patchComments(picObject){
             }
         });
 }
-
-
-// function checkListLocation(){
-//     const ufo = document.querySelector('#ufo');
-//     const datesListArray = document.getElementsByClassName('dateLi');
-//     //console.log(datesListArray[datesListArray.length -1].offsetLeft);
-//     console.log(ufo.offsetLeft);
-//     ufo.offsetLeft = (datesListArray[datesListArray.length -1].offsetLeft);
-// }
