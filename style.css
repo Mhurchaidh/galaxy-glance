@@ -33,8 +33,10 @@ body {
   max-width: 35vw;
   max-height: 60vh;
   margin-left: 3.5vw;
-  margin-top: 5vh;
+  margin-top: 3vh;
   position: fixed;
+  border: solid;
+  border-color: darkorange;
 }
 
 #picture-dates-list li{
@@ -50,7 +52,7 @@ body {
   flex-direction: row;
   gap: 0.7vw;
   justify-self: center;
-  margin-bottom: 12vh;
+  margin-bottom: 6vh;
 }
  
 #picture-info h2 {
@@ -77,13 +79,13 @@ body {
 }
  
 #comment-form-div h3 {
-  color: magenta;
+  color: rgb(255, 0, 149);
   font-size: 1.1vw;
   font-family: 'Orbitron', sans-serif;
 }
 
 #comments-list li{
-  background-color: rgba(255, 255, 255, 0.17);
+  background-color: rgba(255, 255, 255, 0.08);
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
@@ -99,12 +101,13 @@ textarea {
   height: 10vh;
   max-width: 40vw;
   max-height: 10vh;
-  border: 1px solid gray;
+  border: 1px solid rgb(92, 92, 92);
   background: rgba(53, 52, 52, 0.486);
   padding: 5px;
   font-size: 14px;
   margin-bottom: 10px;
   font-family: 'Manrope', sans-serif;
+  color: white;
   margin-top: 2vh;
   z-index: 10;
 }
@@ -117,6 +120,10 @@ textarea {
 
 #comment-form-div {
   margin-top: 5vh;
+}
+
+#comment-form-div button {
+
 }
  
 /* section{
