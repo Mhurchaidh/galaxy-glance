@@ -35,9 +35,9 @@ body {
   margin-left: 3.5vw;
   margin-top: 3vh;
   position: fixed;
-  border: 2px solid #dadada;
-  box-shadow: 0 0 20px rgb(255, 132, 0);
-  border-color: darkorange;
+  border: 2px solid orchid;
+  box-shadow: 0 0 20px orchid;
+  border-color: orchid;
 }
 
 #picture-dates-list li{
