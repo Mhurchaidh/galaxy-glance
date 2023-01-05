@@ -227,7 +227,7 @@ span:nth-child(2){
   top: 10vh;
   right: 50vw;
   left:initial;
-  animation-delay:1s ;
+  animation-delay:1.2s ;
   animation-duration: 3s;
 }
 
