@@ -34,7 +34,7 @@ function addPictures(picObject){
         const datesList = document.querySelectorAll('.dateLi');
         datesList.forEach(element => element.id = '');
         highlightDate(dateItem);
-        renderPicture(picObject)
+        renderPicture(picObject);
     });
     dateItem.addEventListener('mouseover', () => dateItem.style.color = 'rgb(93, 0, 255)');
     dateItem.addEventListener('mouseout', () => dateItem.style.color = 'white');
