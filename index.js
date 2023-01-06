@@ -36,20 +36,28 @@ function addPictures(picObject){
     dateItem.addEventListener('click', () => {
         commentsList.innerHTML = '';
         const datesList = document.querySelectorAll('.dateLi');
-        datesList.forEach(element => {
-            //element.style.color = 'white';
-            element.id = ''});
-        highlightDate(dateItem);
+        datesList.forEach(element => element.id = '')
+        highlightDate(dateItem, datesList);
         renderPicture(picObject);
     });
     dateItem.addEventListener('mouseover', () => dateItem.style.color = 'rgb(93, 0, 255)');
-    dateItem.addEventListener('mouseout', () => dateItem.style.color = 'white');
+    dateItem.addEventListener('mouseout', () => {
+        if(dateItem.id !== 'currentDate'){
+            dateItem.style.color = 'white';
+        }
+        });
     pictureDatesList.append(dateItem);
     datesArray.push(dateItem);
 }
 
-function highlightDate(currDate){
+function highlightDate(currDate, listDates){
     currDate.id = 'currentDate';
+    listDates.forEach(element => {
+        if(element.id !== 'currentDate'){
+            element.style.color = 'white';
+        }
+        
+    });
     //currDate.style.color = 'rgb(93, 0, 255)';
 }
 
