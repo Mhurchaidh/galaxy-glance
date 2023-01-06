@@ -176,7 +176,7 @@ span::before{
   }
   100%
   {
-      transform: rotate(315deg) translateX(-90vw);
+      transform: rotate(315deg) translateX(-80vw);
       opacity: 0;
 
   }
