@@ -34,7 +34,9 @@ function addPictures(picObject){
     dateItem.addEventListener('click', () => {
         commentsList.innerHTML = '';
         const datesList = document.querySelectorAll('.dateLi');
-        datesList.forEach(element => element.id = '');
+        datesList.forEach(element => {
+            //element.style.color = 'white';
+            element.id = ''});
         highlightDate(dateItem);
         renderPicture(picObject);
     });
@@ -46,6 +48,7 @@ function addPictures(picObject){
 
 function highlightDate(currDate){
     currDate.id = 'currentDate';
+    //currDate.style.color = 'rgb(93, 0, 255)';
 }
 
 function renderPicture(spaceObject){
