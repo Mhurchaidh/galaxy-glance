@@ -4,6 +4,7 @@ const dailyURL = "https://go-apod.herokuapp.com/apod";
 let currPicture;
 let previousDate;
 let datesArray = [];
+let newestComments = [];
 
 const dailyImage = document.querySelector('#daily-image');
 const pictureDatesList = document.querySelector('#picture-dates-list');
@@ -17,9 +18,6 @@ const explanation = document.querySelector('#explanation');
 const copyright = document.querySelector('#copyright');
 const commentTextArea = document.querySelector('#comment');
 const submitFormButton = document.querySelector('#submit-button');
-// const deleteButtons = document.querySelector('#create-delete-buttons');
-
-// deleteButtons.addEventListener('click', createDeleteButtons);
 
 function getPicture(url){
     return fetch(url)
@@ -73,23 +71,6 @@ function renderPicture(spaceObject){
     currPicture.comments.forEach(index => renderComments(index));
 }
 
-// function createDeleteButtons(){
-//     const currentComments = document.querySelectorAll('.new-comment');
-//     currentComments.forEach(element => {
-//         deleteButton = document.createElement('button');
-//         deleteButton.textContent = 'bye bitch';
-//         element.append(deleteButton);
-//         deleteButton.addEventListener('click', deleteComment)
-//     })
-// }
-
-// function deleteComment(obj){
-//     let currentCommentText = obj.target.parentElement.textContent;
-//     let commentToDelete = currPicture.comments.filter(index => index === (currentCommentText - obj.target.textContent));
-//     console.log(currentCommentText - obj.textContent);
-// }
-
-
 getPicture(URL).then(pictureArray => {
     iteratePictures(pictureArray);
     renderPicture(pictureArray[pictureArray.length -1]);
@@ -102,9 +83,32 @@ function addNewComment(e){
     if(commentTextArea.value.length !== 0) {
         currPicture.comments.push(commentForm.comment.value);
         commentsList.innerHTML = "";
-        patchComments(currPicture).then(resp => resp.comments.forEach(index => renderComments(index)))
+        patchComments(currPicture).then(resp => {
+            resp.comments.forEach(index => renderComments(index))
+            newestComments.push(resp.comments[resp.comments.length - 1])
+            createDeleteButton();
+        })
         commentForm.reset();
     }
+}
+
+function createDeleteButton(){
+    const commentsArray = document.querySelectorAll('.new-comment');
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'x';
+    let deleteValue = commentsArray.length - 1;
+    deleteButton.setAttribute('value', deleteValue);
+    deleteButton.setAttribute('class', 'delete-button');
+    commentsArray[commentsArray.length - 1].append(deleteButton);
+    deleteComment(deleteButton, currPicture)
+}
+
+function deleteComment(deleteButton, currentPicture){
+    deleteButton.addEventListener('click', () => {
+        currentPicture.comments.splice(deleteButton.value, 1);
+        patchComments(currPicture).then(deleteButton.parentElement.remove())
+    })
+    
 }
 
 function renderComments(index){
