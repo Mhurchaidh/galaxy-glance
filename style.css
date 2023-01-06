@@ -40,7 +40,7 @@ body {
 
 #currentDate{
   /* border: 2px solid orchid; */
-  text-shadow: 0 0 25px orchid, 0 0 2em orchid, 0 0 0.2em rgba(137, 43, 226, 0.679);
+  text-shadow: 0 0 25px rgb(255, 0, 123), 0 0 2em rgb(255, 0, 123), 0 0 0.2em rgba(137, 43, 226, 0.679);
   /* border-color: orchid; */
   /* color: rgb(93, 0, 255); */
 }
@@ -134,12 +134,13 @@ button {
   padding: 10px;
   width: max-content;
   max-height: min-content;
-  color: #ffffff;
+  color: rgb(0, 0, 0);
   text-align: center;
   border: 4px #cccccc; 
   border-radius: 10px; 
   font-size: 14px; 
-  font-family: 'Manrope', sans-serif;
+  font-weight: bolder;
+  font-family: 'Orbitron', sans-serif;
   cursor: pointer;
 }
  
