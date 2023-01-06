@@ -55,8 +55,8 @@ function renderPicture(spaceObject){
     title.textContent = `- ${spaceObject.title} -`;
     image.src = spaceObject.hdurl;
     currPicture.comments.forEach(index => renderComments(index));
-    //checkListLocation();
 }
+
 
 getPicture(URL).then(pictureArray => {
     iteratePictures(pictureArray);
@@ -69,7 +69,7 @@ function addNewComment(e){
     e.preventDefault();
     currPicture.comments.push(commentForm.comment.value);
     commentsList.innerHTML = "";
-    patchComments(currPicture).then(renderPicture)
+    patchComments(currPicture).then(resp => resp.comments.forEach(index => renderComments(index)))
     commentForm.reset();
 }
 
