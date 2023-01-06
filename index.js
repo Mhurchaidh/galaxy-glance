@@ -17,6 +17,9 @@ const explanation = document.querySelector('#explanation');
 const copyright = document.querySelector('#copyright');
 const commentTextArea = document.querySelector('#comment');
 const submitFormButton = document.querySelector('#submit-button');
+// const deleteButtons = document.querySelector('#create-delete-buttons');
+
+// deleteButtons.addEventListener('click', createDeleteButtons);
 
 function getPicture(url){
     return fetch(url)
@@ -70,6 +73,24 @@ function renderPicture(spaceObject){
     currPicture.comments.forEach(index => renderComments(index));
 }
 
+// function createDeleteButtons(){
+//     const currentComments = document.querySelectorAll('.new-comment');
+//     currentComments.forEach(element => {
+//         deleteButton = document.createElement('button');
+//         deleteButton.textContent = '-';
+//         element.append(deleteButton);
+//         deleteButton.addEventListener('click', (e) => {
+//             let currentCommentText = e.target.parentElement.textContent;
+//             let commentToDelete = currPicture.comments.find(index => index == currentCommentText);
+//             console.log(commentToDelete);
+//         })
+//     })
+// }
+
+// function deleteComment(obj){
+
+// }
+
 
 getPicture(URL).then(pictureArray => {
     iteratePictures(pictureArray);
@@ -90,6 +111,7 @@ function addNewComment(e){
 
 function renderComments(index){
     const newComment = document.createElement('li');
+    newComment.setAttribute('class', 'new-comment');
     newComment.textContent = index;
     commentsList.append(newComment);
 }

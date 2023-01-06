@@ -38,6 +38,10 @@ body {
   top: 28vh
 }
 
+/* #create-delete-buttons {
+  margin-left: 25px;
+} */
+
 #currentDate{
   /* border: 2px solid orchid; */
   text-shadow: 0 0 25px rgb(255, 0, 123), 0 0 2em rgb(255, 0, 123), 0 0 0.2em rgba(137, 43, 226, 0.679);
