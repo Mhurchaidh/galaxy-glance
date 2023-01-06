@@ -100,12 +100,12 @@ function createDeleteButton(){
     deleteButton.setAttribute('value', deleteValue);
     deleteButton.setAttribute('class', 'delete-button');
     commentsArray[commentsArray.length - 1].append(deleteButton);
-    deleteComment(deleteButton, currPicture)
+    deleteComment(deleteButton)
 }
 
-function deleteComment(deleteButton, currentPicture){
+function deleteComment(deleteButton){
     deleteButton.addEventListener('click', () => {
-        currentPicture.comments.splice(deleteButton.value, 1);
+        currPicture.comments.splice(deleteButton.value, 1);
         patchComments(currPicture).then(deleteButton.parentElement.remove())
     })
     
