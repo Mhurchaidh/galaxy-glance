@@ -19,9 +19,10 @@ function getPicture(url){
     return fetch(url)
         .then(resp => resp.json())
 }
-
+let datesArray = [];
 function iteratePictures(pictureArray){
     pictureArray.forEach(addPictures);
+    datesArray[datesArray.length - 1].id = 'currentDate';
 }
 
 function addPictures(picObject){
@@ -39,6 +40,7 @@ function addPictures(picObject){
     dateItem.addEventListener('mouseover', () => dateItem.style.color = 'rgb(93, 0, 255)');
     dateItem.addEventListener('mouseout', () => dateItem.style.color = 'white');
     pictureDatesList.append(dateItem);
+    datesArray.push(dateItem);
 }
 
 function highlightDate(currDate){
