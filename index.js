@@ -15,6 +15,8 @@ const image = document.querySelector('#space-image');
 const title = document.querySelector('#title');
 const explanation = document.querySelector('#explanation');
 const copyright = document.querySelector('#copyright');
+const commentTextArea = document.querySelector('#comment');
+const submitFormButton = document.querySelector('#submit-button');
 
 function getPicture(url){
     return fetch(url)
@@ -67,10 +69,12 @@ commentForm.addEventListener('submit', addNewComment)
 
 function addNewComment(e){
     e.preventDefault();
-    currPicture.comments.push(commentForm.comment.value);
-    commentsList.innerHTML = "";
-    patchComments(currPicture).then(resp => resp.comments.forEach(index => renderComments(index)))
-    commentForm.reset();
+    if(commentTextArea.value.length !== 0) {
+        currPicture.comments.push(commentForm.comment.value);
+        commentsList.innerHTML = "";
+        patchComments(currPicture).then(resp => resp.comments.forEach(index => renderComments(index)))
+        commentForm.reset();
+    }
 }
 
 function renderComments(index){
