@@ -228,6 +228,7 @@ span:nth-child(1){
   left:initial;
   animation-delay:1s;
   animation-duration: 2.5s;
+  opacity: 0;
 }
 
 span:nth-child(2){
@@ -236,6 +237,7 @@ span:nth-child(2){
   left:initial;
   animation-delay:1.2s ;
   animation-duration: 3s;
+  opacity: 0;
 }
 
 /* span:nth-child(7){
@@ -251,7 +253,8 @@ span:nth-child(3){
   right: 70vw;
   left:initial;
   animation-delay:1.4s ;
-  animation-duration: 3.25s;
+  animation-duration: 3.35s;
+  opacity: 0;
 }
 
 span:nth-child(4){
@@ -259,13 +262,15 @@ span:nth-child(4){
   right: 40vw;
   left:initial;
   animation-delay:0.75s ;
-  animation-duration: 2.15s;
+  animation-duration: 2s;
+  opacity: 0;
 }
 
 span:nth-child(5){
   top: 10vh;
   right: 20vw;
   left:initial;
-  animation-delay:2.75s ;
+  animation-delay:2.05s ;
   animation-duration: 2.25s;
+  opacity: 0;
 }

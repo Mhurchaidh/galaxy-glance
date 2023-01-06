@@ -3,6 +3,7 @@ const dailyURL = "https://go-apod.herokuapp.com/apod";
 
 let currPicture;
 let previousDate;
+let datesArray = [];
 
 const dailyImage = document.querySelector('#daily-image');
 const pictureDatesList = document.querySelector('#picture-dates-list');
@@ -19,7 +20,7 @@ function getPicture(url){
     return fetch(url)
         .then(resp => resp.json())
 }
-let datesArray = [];
+
 function iteratePictures(pictureArray){
     pictureArray.forEach(addPictures);
     datesArray[datesArray.length - 1].id = 'currentDate';
