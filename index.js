@@ -77,18 +77,16 @@ function renderPicture(spaceObject){
 //     const currentComments = document.querySelectorAll('.new-comment');
 //     currentComments.forEach(element => {
 //         deleteButton = document.createElement('button');
-//         deleteButton.textContent = '-';
+//         deleteButton.textContent = 'bye bitch';
 //         element.append(deleteButton);
-//         deleteButton.addEventListener('click', (e) => {
-//             let currentCommentText = e.target.parentElement.textContent;
-//             let commentToDelete = currPicture.comments.find(index => index == currentCommentText);
-//             console.log(commentToDelete);
-//         })
+//         deleteButton.addEventListener('click', deleteComment)
 //     })
 // }
 
 // function deleteComment(obj){
-
+//     let currentCommentText = obj.target.parentElement.textContent;
+//     let commentToDelete = currPicture.comments.filter(index => index === (currentCommentText - obj.target.textContent));
+//     console.log(currentCommentText - obj.textContent);
 // }
 
 
