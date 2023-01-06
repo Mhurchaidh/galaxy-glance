@@ -40,7 +40,7 @@ body {
 
 #currentDate{
   /* border: 2px solid orchid; */
-  text-shadow: 0 0 35px orchid, 0 0 2em orchid, 0 0 0.2em orchid;
+  text-shadow: 0 0 25px orchid, 0 0 2em orchid, 0 0 0.2em rgba(137, 43, 226, 0.679);
   /* border-color: orchid; */
   /* color: rgb(93, 0, 255); */
 }
